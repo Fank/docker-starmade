@@ -1,9 +1,11 @@
 #!/bin/sh
+set -e
 
-mkdir /starmade
-wget -q http://files.star-made.org/StarMade-Starter.jar
-java -jar ./Starmade-Starter.jar -nogui
+mkdir -p /starmade
 cd /starmade
+wget -q http://files.star-made.org/StarMade-Starter.jar
+chmod +x StarMade-Starter.jar
+java -jar ./StarMade-Starter.jar -nogui
 chmod ug+x StarMade-dedicated-server-linux.sh
 
 for config in admins blacklist protected server-message whitelist; do
