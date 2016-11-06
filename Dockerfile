@@ -1,4 +1,4 @@
-FROM openjdk:alpine
+FROM openjdk
 
 ADD install-starmade.sh /tmp/
 RUN /tmp/install-starmade.sh
