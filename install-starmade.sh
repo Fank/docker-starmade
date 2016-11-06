@@ -1,12 +1,16 @@
 #!/bin/sh
+set -e
 
-cd /tmp
-wget -q http://files.star-made.org/build/starmade-build_${STARMADE_BUILD_REV}.zip
-mkdir /starmade
+mkdir -p /starmade
 cd /starmade
-unzip /tmp/starmade-build_${STARMADE_BUILD_REV}.zip
+wget -q http://files.star-made.org/StarMade-Starter.jar
+chmod +x StarMade-Starter.jar
+
+# Little hack to make the installer install into the current folder
+ln -s /starmade StarMade
+
+java -jar ./StarMade-Starter.jar -nogui
 chmod ug+x StarMade-dedicated-server-linux.sh
-rm /tmp/starmade-build_${STARMADE_BUILD_REV}.zip
 
 for config in admins blacklist protected server-message whitelist; do
     ln -sf config/${config}.txt ${config}.txt
