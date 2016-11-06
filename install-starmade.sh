@@ -5,6 +5,10 @@ mkdir -p /starmade
 cd /starmade
 wget -q http://files.star-made.org/StarMade-Starter.jar
 chmod +x StarMade-Starter.jar
+
+# Little hack to make the installer install into the current folder
+ln -s /starmade StarMade
+
 java -jar ./StarMade-Starter.jar -nogui
 chmod ug+x StarMade-dedicated-server-linux.sh
 
