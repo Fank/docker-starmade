@@ -1,6 +1,4 @@
-FROM dockerfile/java
-
-ENV STARMADE_BUILD_REV 20150207_224528
+FROM openjdk/jre-alpine
 
 ADD install-starmade.sh /tmp/
 RUN /tmp/install-starmade.sh

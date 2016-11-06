@@ -1,6 +1,6 @@
-# starmade-docker
+# StarMade DS Docker Edition
 
-A Docker container for running a dedicated StarMade server.
+A Docker container for running a dedicated [StarMade](http://www.star-made.org/) server.
 
 I've taken some lengths to ensure that the configurations are VOLUME-mountable
 and that you can thereby upgrade servers by having a data-container that is
